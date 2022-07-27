@@ -10,9 +10,9 @@ let db, //initializing db variable
     dbName = 'todo' //naming the database 'todo'
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }) //mongo connection method //wjat does unified topology mean?
-    .then(client => {
-        console.log(`Connected to ${dbName} Database`)
-        db = client.db(dbName)
+    .then(client => { // .then method using a promise
+        console.log(`Connected to ${dbName} Database`) //confirming databse connection with console.log
+        db = client.db(dbName) //need to find this
     })
     
 app.set('view engine', 'ejs')
