@@ -1,13 +1,13 @@
-const express = require('express')
-const app = express()
-const MongoClient = require('mongodb').MongoClient
-const PORT = 2121
-require('dotenv').config()
+const express = require('express') //initilazing the express module from npm after install
+const app = express() //initializing express methods from inside express. requiring express + using = 2 lines
+const MongoClient = require('mongodb').MongoClient //initilizaing mongo database
+const PORT =  //port number 
+require('dotenv').config() //requiring .env file for mongodb
 
 
-let db,
-    dbConnectionStr = process.env.DB_STRING,
-    dbName = 'todo'
+let db, //initializing db variable
+    dbConnectionStr = process.env.DB_STRING, //db connection string = DB string in the env file
+    dbName = 'todo' //naming the database 'todo'
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {
