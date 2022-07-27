@@ -9,7 +9,7 @@ let db, //initializing db variable
     dbConnectionStr = process.env.DB_STRING, //db connection string = DB string in the env file
     dbName = 'todo' //naming the database 'todo'
 
-MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
+MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }) //mongo connection method //wjat does unified topology mean?
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
