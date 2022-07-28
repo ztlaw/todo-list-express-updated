@@ -20,6 +20,10 @@ app.use(express.static('public')) //using the public folder for express.js
 app.use(express.urlencoded({ extended: true })) //parses incoming requests with urlencoded payloads and is based on body-parser.
 app.use(express.json()) //only looks at requests where the Content-Type header matches the type option.  example: type: 'application/json'
 
+//GET - CREATE
+//PUT - READ
+//POST - UPDATE
+//DELETE - DELETE
 
 app.get('/',async (request, response)=>{ //GET = CREATE. creating an html page on  '/' ping, with async fn
     const todoItems = await db.collection('todos').find().toArray() //await = wait for this method before doing anything else.
