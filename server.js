@@ -18,11 +18,12 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }) //mongo conne
 app.set('view engine', 'ejs') //this is required to use express -- initializing into variable
 app.use(express.static('public')) //using the public folder for express.js
 app.use(express.urlencoded({ extended: true })) //parses incoming requests with urlencoded payloads and is based on body-parser.
-app.use(express.json())
+app.use(express.json()) //only looks at requests where the Content-Type header matches the type option.  example: type: 'application/json'
 
 
-app.get('/',async (request, response)=>{
-    const todoItems = await db.collection('todos').find().toArray()
+app.get('/',async (request, response)=>{ //GET = CREATE. creating an html page on  '/' ping, with async fn
+    const todoItems = await db.collection('todos').find().toArray() //await = wait for this method before doing anything else.
+    //finding all items inside collection 'todos', turning it into an array element.
     const itemsLeft = await db.collection('todos').countDocuments({completed: false})
     response.render('index.ejs', { items: todoItems, left: itemsLeft })
     // db.collection('todos').find().toArray()
