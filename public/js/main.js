@@ -1,8 +1,8 @@
-const deleteBtn = document.querySelectorAll('.fa-trash')
-const item = document.querySelectorAll('.item span')
-const itemCompleted = document.querySelectorAll('.item span.completed')
+const deleteBtn = document.querySelectorAll('.fa-trash') //selecting ALL elements that have the .fa-trash class 
+const item = document.querySelectorAll('.item span') //selecting ALL elements that have the .item class and span elements
+const itemCompleted = document.querySelectorAll('.item span.completed') //selecting ALL elements that have the .item class and span elements with a .completed class
 
-Array.from(deleteBtn).forEach((element)=>{
+Array.from(deleteBtn).forEach((element)=>{ //creating an array from the deleteBtn variable which is all trash-can symbols 
     element.addEventListener('click', deleteItem)
 })
 
