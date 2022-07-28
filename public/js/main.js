@@ -3,15 +3,15 @@ const item = document.querySelectorAll('.item span') //selecting ALL elements th
 const itemCompleted = document.querySelectorAll('.item span.completed') //selecting ALL elements that have the .item class and span elements with a .completed class
 
 Array.from(deleteBtn).forEach((element)=>{ //creating an array from the deleteBtn variable which is all trash-can symbols 
-    element.addEventListener('click', deleteItem)
+    element.addEventListener('click', deleteItem) // within the array is a forEach method with a click event and async callback function 
 })
 
-Array.from(item).forEach((element)=>{
-    element.addEventListener('click', markComplete)
+Array.from(item).forEach((element)=>{ //creating an array from the item variable 
+    element.addEventListener('click', markComplete) // within the array is a forEach method with a click event and async callback function
 })
 
-Array.from(itemCompleted).forEach((element)=>{
-    element.addEventListener('click', markUnComplete)
+Array.from(itemCompleted).forEach((element)=>{ //creating an array from the itemCompleted variable 
+    element.addEventListener('click', markUnComplete) // within the array is a forEach method with a click event and async callback function
 })
 
 async function deleteItem(){
