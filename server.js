@@ -60,11 +60,11 @@ app.put('/markComplete', (request, response) => { // READ METHOD -- READ goes in
         sort: {_id: -1}, //sort -1 = descending, and 1 = ascending 
         upsert: false //combination of insert and update 
     })
-    .then(result => {
+    .then(result => { //finishing promise to confirm a complete task
         console.log('Marked Complete')
         response.json('Marked Complete')
     })
-    .catch(error => console.error(error))
+    .catch(error => console.error(error)) //catching error confirmation
 
 })
 
