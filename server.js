@@ -24,8 +24,8 @@ app.use(express.json()) //only looks at requests where the Content-Type header m
 app.get('/',async (request, response)=>{ //GET = CREATE. creating an html page on  '/' ping, with async fn
     const todoItems = await db.collection('todos').find().toArray() //await = wait for this method before doing anything else.
     //finding all items inside collection 'todos', turning it into an array element.
-    const itemsLeft = await db.collection('todos').countDocuments({completed: false})
-    response.render('index.ejs', { items: todoItems, left: itemsLeft })
+    const itemsLeft = await db.collection('todos').countDocuments({completed: false}) //itemsLeft = count documents method with object filter - completed: false
+    response.render('index.ejs', { items: todoItems, left: itemsLeft }) //after await is completed, render ejs HTML file. 1st param: ejs file, 2nd param: sending object to front-end
     // db.collection('todos').find().toArray()
     // .then(data => {
     //     db.collection('todos').countDocuments({completed: false})
