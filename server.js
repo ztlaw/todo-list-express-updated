@@ -50,7 +50,7 @@ app.post('/addTodo', (request, response) => { //using POST = UPDATE method when 
     .catch(error => console.error(error)) //catching error
 })
 
-app.put('/markComplete', (request, response) => {
+app.put('/markComplete', (request, response) => { // READ METHOD -- READ goes into the database system to retrieve, search, or view existing entries
     db.collection('todos').updateOne({thing: request.body.itemFromJS},{
         $set: {
             completed: true
