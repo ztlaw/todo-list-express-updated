@@ -1,7 +1,7 @@
 const express = require('express') //initilazing the express module from npm after install
 const app = express() //initializing express methods from inside express. requiring express + using = 2 lines
 const MongoClient = require('mongodb').MongoClient //initilizaing mongo database
-const PORT =  //port number 
+const PORT = 2121 //port number 
 require('dotenv').config() //requiring .env file for mongodb
 
 
