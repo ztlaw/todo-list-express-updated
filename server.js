@@ -51,13 +51,14 @@ app.post('/addTodo', (request, response) => { //using POST = UPDATE method when 
 })
 
 app.put('/markComplete', (request, response) => { // READ METHOD -- READ goes into the database system to retrieve, search, or view existing entries
-    db.collection('todos').updateOne({thing: request.body.itemFromJS},{
-        $set: {
-            completed: true
+    db.collection('todos').updateOne({thing: request.body.itemFromJS},{ //go into the the 'todos' collection and updateOne using the filter object prop: thing 
+        //key: req.body.itemFromJS = the information that is sent over from the FRONT END 
+        $set: { //$set method changes the value of the key 
+            completed: true //changing value of property: completed from false to true 
           }
     },{
-        sort: {_id: -1},
-        upsert: false
+        sort: {_id: -1}, //sort -1 = descending, and 1 = ascending 
+        upsert: false //combination of insert and update 
     })
     .then(result => {
         console.log('Marked Complete')
