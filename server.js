@@ -36,13 +36,14 @@ app.get('/',async (request, response)=>{ //GET = CREATE. creating an html page o
     // .catch(error => console.error(error))
 })
 
-app.post('/addTodo', (request, response) => {
-    db.collection('todos').insertOne({thing: request.body.todoItem, completed: false})
-    .then(result => {
-        console.log('Todo Added')
-        response.redirect('/')
+app.post('/addTodo', (request, response) => { //using POST = UPDATE method when '/addTodo' is pinged in the index.ejs
+    db.collection('todos').insertOne({thing: request.body.todoItem, completed: false}) //req.body.todoItem = the name in the form input.
+    // also adding another property of 'completed' with a default value of false
+    .then(result => { //using .then as a promise -- promise happens after method is complete
+        console.log('Todo Added') //confirmation of database update
+        response.redirect('/') //redirects to the '/' ping. ping will utilize GET method after insertOne method is complete
     })
-    .catch(error => console.error(error))
+    .catch(error => console.error(error)) //catching error
 })
 
 app.put('/markComplete', (request, response) => {
