@@ -75,8 +75,8 @@ app.put('/markUnComplete', (request, response) => { //READ METHOD when marking a
             completed: false // changing items that were previously completed: true -- into completed: false 
           }
     },{
-        sort: {_id: -1},
-        upsert: false
+        sort: {_id: -1}, //sort -1 = descending, and 1 = ascending 
+        upsert: false //combination of insert and update  -- find out what the difference between false and true upsert
     })
     .then(result => {
         console.log('Marked Complete')
