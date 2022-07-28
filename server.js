@@ -68,10 +68,11 @@ app.put('/markComplete', (request, response) => { // READ METHOD -- READ goes in
 
 })
 
-app.put('/markUnComplete', (request, response) => {
-    db.collection('todos').updateOne({thing: request.body.itemFromJS},{
-        $set: {
-            completed: false
+app.put('/markUnComplete', (request, response) => { //READ METHOD when marking a task as incomplete -- goes into the database system and searches an existing entry to update
+    db.collection('todos').updateOne({thing: request.body.itemFromJS},{ // updates a task from the todos collection with the filter -- thing: 
+        //req.body.itemsFromJS = front-end items that were sent into the backend 
+        $set: { // $set = changing a property 
+            completed: false // changing items that were previously completed: true -- into completed: false 
           }
     },{
         sort: {_id: -1},
