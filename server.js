@@ -4,6 +4,7 @@ const MongoClient = require('mongodb').MongoClient //initilizaing mongo database
 const PORT = 2121 //port number 
 require('dotenv').config() //requiring .env file for mongodb
 
+//testing
 
 let db, //initializing db variable
     dbConnectionStr = process.env.DB_STRING, //db connection string = DB string in the env file
