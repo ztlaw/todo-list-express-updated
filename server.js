@@ -15,9 +15,9 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }) //mongo conne
         db = client.db(dbName) //need to find this
     })
     
-app.set('view engine', 'ejs')
-app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }))
+app.set('view engine', 'ejs') //this is required to use express -- initializing into variable
+app.use(express.static('public')) //using the public folder for express.js
+app.use(express.urlencoded({ extended: true })) //parses incoming requests with urlencoded payloads and is based on body-parser.
 app.use(express.json())
 
 
