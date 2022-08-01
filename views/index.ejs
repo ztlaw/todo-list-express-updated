@@ -24,7 +24,7 @@
     <% for(let i=0; i < items.length; i++) {%> <!-- Using a for loop with the items array. this array is linked from the res.render back-end GET method-->
         <li class="item">
             <% if(items[i].completed === true) {%>
-                <span class='completed'><%= items[i].thing %></span> 
+                <span class='completed'><%= items[i].thing %></span> <!-- item.thing = property given to item during the PUT request /markComplete-->
             <% }else{ %>
                 <span><%= items[i].thing %></span>
             <% } %>    
