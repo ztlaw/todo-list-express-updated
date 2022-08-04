@@ -54,7 +54,7 @@ async function markComplete(){ //async function tied to clickevent
 }
 
 async function markUnComplete(){
-    const itemText = this.parentNode.childNodes[1].innerText
+    const itemText = this.parentNode.childNodes[1].innerText //itemText = going into THIS object and finding the html text. always console.log 'this' to look at the html properties
     try{
         const response = await fetch('markUnComplete', {
             method: 'put',
