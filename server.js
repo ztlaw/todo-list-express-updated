@@ -100,3 +100,5 @@ app.delete('/deleteItem', (request, response) => {
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`Server running on port ${PORT}`)
 })
+
+//next step: may need to utilize google auth to authorize users into database
