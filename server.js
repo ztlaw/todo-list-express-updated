@@ -102,3 +102,4 @@ app.listen(process.env.PORT || PORT, ()=>{
 })
 
 //next step: may need to utilize google auth to authorize users into database
+//also, can use different  endpoints for GET requests to receive differnt index.ejs's pages that have been created.
