@@ -1,2 +1,1 @@
-npm install
-add DB_STRING to .env file
+To-Do List with detailed comments -- using CRUD and MERN Stack.
