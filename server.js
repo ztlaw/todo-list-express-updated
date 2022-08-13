@@ -39,6 +39,7 @@ app.get('/',async (request, response)=>{ //GET = CREATE. creating an html page o
     //     })
     // })
     // .catch(error => console.error(error))
+    
 })
 
 app.post('/addTodo', (request, response) => { //using POST = UPDATE method when '/addTodo' is pinged in the index.ejs
